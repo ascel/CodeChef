@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define INF (ll)(1e18 + 5)
+#define MOD (int)(1e9 + 7)
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+	int a, n, k;
+	cin >> a >> n >> k;
+	vector<int> dp(k, 0);
+	int left = a;
+	for(int i = 0; i < k; i++) {
+		dp[i] = left % (n + 1);
+		left /= n + 1;
+	}
+	for(int i = 0; i < k; i++) {
+		cout << dp[i] << " ";
+	}
+	cout << endl;
+    return 0;
+}
